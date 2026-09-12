@@ -397,11 +397,13 @@ function LockIcon(): ReactNode {
 }
 
 function formatCurrency(n: number, locale: string): string {
-  return new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
+  const numberLocale = locale === "pt" ? "pt-BR" : locale === "vi" ? "vi-VN" : "en-US";
+  return new Intl.NumberFormat(numberLocale, { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
 }
 
 function formatContributions(n: number, locale: string): string {
-  return new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US").format(n);
+  const numberLocale = locale === "pt" ? "pt-BR" : locale === "vi" ? "vi-VN" : "en-US";
+  return new Intl.NumberFormat(numberLocale).format(n);
 }
 
 function formatStars(n: number): string {

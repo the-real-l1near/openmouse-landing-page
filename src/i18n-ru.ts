@@ -843,5 +843,6 @@ export const ru: Record<I18nKey, string> = {
   "adm.viewsWord": "просмотров",
   "adm.peakConcurrent": "пик одновременно {n}",
   "set.russian": "Русский",
+  "set.vietnamese": "Tiếng Việt",
   "page.ru": "РУС",
 };
