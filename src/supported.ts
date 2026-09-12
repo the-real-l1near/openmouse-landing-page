@@ -535,7 +535,7 @@ function renderList(): void {
         ${totalReq > 0 ? `<span class="brand-reqs">(${totalReq} request${totalReq === 1 ? "" : "s"})</span>` : ""}
       </button>
       <table class="device-table">
-        <thead><tr><th>${t(locale, "supp.thStatus")}</th><th>${t(locale, "supp.thModel")}</th><th>${t(locale, "supp.thNotes")}</th><th style="text-align:right">${t(locale, "supp.thVotes")}</th></tr></thead>
+        <thead><tr><th>${t(locale, "supp.thStatus")}</th><th>${t(locale, "supp.thModel")}</th><th>${t(locale, "supp.thNotes")}</th><th>${t(locale, "supp.thVotes")}</th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>`;
