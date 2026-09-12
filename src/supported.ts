@@ -109,6 +109,14 @@ function formatModelName(model: string): string {
   return `${suffix[1]} <span class="model-qualifier">${suffix[2].trim()}</span>`;
 }
 
+function syncVoteColumnWidth(root: HTMLElement): void {
+  const label = root.querySelector<HTMLElement>(".vote-heading-label");
+  if (!label) return;
+  const horizontalPadding = 36;
+  const width = Math.max(72, Math.ceil(label.getBoundingClientRect().width + horizontalPadding));
+  root.style.setProperty("--vote-column-width", `${width}px`);
+}
+
 const activeTags = new Set<Status>();
 let activeBrand: string | null = null;
 let searchQuery = "";
@@ -535,11 +543,14 @@ function renderList(): void {
         ${totalReq > 0 ? `<span class="brand-reqs">(${totalReq} request${totalReq === 1 ? "" : "s"})</span>` : ""}
       </button>
       <table class="device-table">
-        <thead><tr><th>${t(locale, "supp.thStatus")}</th><th>${t(locale, "supp.thModel")}</th><th>${t(locale, "supp.thNotes")}</th><th>${t(locale, "supp.thVotes")}</th></tr></thead>
+        <thead><tr><th>${t(locale, "supp.thStatus")}</th><th>${t(locale, "supp.thModel")}</th><th>${t(locale, "supp.thNotes")}</th><th><span class="vote-heading-label">${t(locale, "supp.thVotes")}</span></th></tr></thead>
         <tbody>${rows}</tbody>
       </table>
     </div>`;
   }).join("");
+
+  syncVoteColumnWidth(el);
+  void document.fonts.ready.then(() => syncVoteColumnWidth(el));
 
   el.querySelectorAll<HTMLButtonElement>(".brand-header").forEach(btn => {
     btn.addEventListener("click", () => {

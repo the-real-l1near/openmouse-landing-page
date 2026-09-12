@@ -509,7 +509,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 .device-table th:nth-child(4),
 .device-table td:nth-child(4) {
-  width: 10rem;
+  width: var(--vote-column-width, 10rem);
   text-align: center;
 }
 
@@ -620,6 +620,5 @@ footer {
   .device-table th:nth-child(3), .device-table td:nth-child(3) { display: none; }
   .device-table th:nth-child(1), .device-table td:nth-child(1) { width: 38%; }
   .device-table th:nth-child(2), .device-table td:nth-child(2) { width: auto; }
-  .device-table th:nth-child(4), .device-table td:nth-child(4) { width: 4.5rem; }
   footer { justify-content: center; text-align: center; }
 }
