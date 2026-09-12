@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { createRoot } from "react-dom/client";
 import "./donate.css";
 import { mountOfflineBanner } from "./offline-banner";
@@ -6,337 +6,7 @@ import { registerServiceWorker } from "./register-sw";
 import { t, tp } from "./i18n";
 import { PageLocaleToggle, usePageLocale } from "./app/page-locale";
 import { GITHUB_URL } from "./app/social-links";
-
-const ORG = "OpenMouse-Project";
-const REFRESH_MS = 15 * 60 * 1000;
-const GITHUB_API = "https://api.github.com";
-const PER_PAGE = 100;
-const MAX_PAGES = 40;
-
-/* ── Live contributor data (ported from the old Hall of Fame) ──────────── */
-
-type RepoKey = string;
-
-interface RepoInfo {
-  key: RepoKey;
-  label: string;
-  fullName: string;
-}
-
-interface BranchData {
-  key: RepoKey;
-  repo: string;
-  branch: string;
-  label: string;
-  commits: number;
-  authors: { login: string; avatar: string | null; htmlUrl: string | null; count: number }[];
-}
-
-interface RepoPulls {
-  key: RepoKey;
-  repo: string;
-  prs: number;
-  authors: { login: string; avatar: string | null; htmlUrl: string | null; prs: number }[];
-}
-
-interface MergedContributor {
-  login: string;
-  avatar: string | null;
-  htmlUrl: string | null;
-  total: number;
-  repos: Partial<Record<RepoKey, number>>;
-  prs: Partial<Record<RepoKey, number>>;
-}
-
-interface CachedData {
-  fetchedAt: number;
-  branches: BranchData[];
-  pulls: RepoPulls[];
-  repoList: RepoInfo[];
-  merged: MergedContributor[];
-}
-
-const CACHE_KEY = "openmouse-donate-contributors-v1";
-
-/* Baked-in recent snapshot of contributors (from the org repo commit history at
-   build time). Shown whenever GitHub is rate-limited; refreshed automatically by
-   the next successful live fetch, which replaces it via localStorage. */
-const DEFAULT_CONTRIBUTORS: { login: string; total: number; avatar: string }[] = [
-  { login: "snekxs", total: 426, avatar: "https://github.com/snekxs.png" },
-  { login: "jazzstack", total: 112, avatar: "https://github.com/jazzstack.png" },
-  { login: "dwei30", total: 45, avatar: "https://github.com/dwei30.png" },
-  { login: "viix0dev", total: 24, avatar: "https://github.com/viix0dev.png" },
-  { login: "nyedle", total: 22, avatar: "https://github.com/nyedle.png" },
-  { login: "angelocore", total: 21, avatar: "https://github.com/angelocore.png" },
-  { login: "Pochiiko", total: 21, avatar: "https://github.com/Pochiiko.png" },
-  { login: "Josh Jenkins", total: 19, avatar: "" },
-  { login: "Grandma", total: 9, avatar: "" },
-  { login: "AnasIsmai1", total: 7, avatar: "https://github.com/AnasIsmai1.png" },
-  { login: "qsxcv", total: 6, avatar: "https://github.com/qsxcv.png" },
-  { login: "weltern", total: 5, avatar: "https://github.com/weltern.png" },
-  { login: "ydw1904", total: 5, avatar: "https://github.com/ydw1904.png" },
-  { login: "nguyenan1601", total: 2, avatar: "https://github.com/nguyenan1601.png" },
-  { login: "NotLokry", total: 1, avatar: "https://github.com/NotLokry.png" },
-  { login: "FormunaGit", total: 1, avatar: "https://github.com/FormunaGit.png" },
-];
-
-function defaultData(): CachedData {
-  return {
-    fetchedAt: 0,
-    branches: [],
-    pulls: [],
-    repoList: [],
-    merged: DEFAULT_CONTRIBUTORS.map((c) => ({
-      login: c.login,
-      avatar: c.avatar || null,
-      htmlUrl: c.avatar ? `https://github.com/${c.login}` : null,
-      total: c.total,
-      repos: {},
-      prs: {},
-    })),
-  };
-}
-
-function readCache(): CachedData | null {
-  try {
-    const raw = localStorage.getItem(CACHE_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as CachedData;
-    if (!Array.isArray(parsed.branches) || parsed.branches.length === 0 || !Array.isArray(parsed.repoList) || !Array.isArray(parsed.pulls) || !Array.isArray(parsed.merged)) return null;
-    return parsed;
-  } catch {
-    return null;
-  }
-}
-
-function writeCache(data: CachedData): void {
-  try {
-    localStorage.setItem(CACHE_KEY, JSON.stringify(data));
-  } catch {
-    /* storage unavailable */
-  }
-}
-
-function repoKeyOf(name: string): RepoKey {
-  return name.toLowerCase();
-}
-
-function repoLabelOf(name: string): string {
-  if (repoKeyOf(name) === "openmouse") return "OpenMouse";
-  return name
-    .split("-")
-    .map((part) => (part ? part.charAt(0).toUpperCase() + part.slice(1) : part))
-    .join(" ");
-}
-
-async function githubJson<T>(path: string): Promise<{ data: T; link: string | null }> {
-  const res = await fetch(`${GITHUB_API}${path}`, { headers: { Accept: "application/vnd.github+json" } });
-  if (!res.ok) throw new Error(`GitHub API ${res.status}`);
-  const data = (await res.json()) as T;
-  return { data, link: res.headers.get("link") };
-}
-
-function lastPageNumber(link: string | null): number {
-  if (!link) return 1;
-  const match = /page=(\d+)[^>]*>;\s*rel="last"/.exec(link);
-  return match ? Math.min(Number(match[1]), MAX_PAGES) : 1;
-}
-
-interface ApiCommit {
-  author: { login: string; avatar_url: string; html_url: string } | null;
-  commit: { author: { name: string } };
-}
-
-async function fetchBranch(repo: string, branch: string, key: RepoKey, label: string): Promise<BranchData> {
-  const pages: ApiCommit[][] = [];
-  const path = `/repos/${repo}/commits?sha=${branch}`;
-  const first = await githubJson<ApiCommit[]>(`${path}&per_page=${PER_PAGE}&page=1`);
-  pages.push(first.data);
-  const last = lastPageNumber(first.link);
-  for (let page = 2; page <= last; page += 1) {
-    const { data } = await githubJson<ApiCommit[]>(`${path}&per_page=${PER_PAGE}&page=${page}`);
-    pages.push(data);
-    if (data.length < PER_PAGE) break;
-  }
-
-  const authors = new Map<string, { login: string; avatar: string | null; htmlUrl: string | null; count: number }>();
-  let commits = 0;
-  for (const commit of pages.flat()) {
-    commits += 1;
-    const login = commit.author?.login;
-    const fallback = commit.author ? null : commit.commit.author.name;
-    const name = login ?? fallback ?? "Unknown";
-    if (name.endsWith("[bot]") || name === "Unknown") continue;
-    const entry = authors.get(name) ?? {
-      login: name,
-      avatar: commit.author?.avatar_url ?? null,
-      htmlUrl: commit.author?.html_url ?? null,
-      count: 0,
-    };
-    if (!entry.avatar) entry.avatar = commit.author?.avatar_url ?? null;
-    if (!entry.htmlUrl) entry.htmlUrl = commit.author?.html_url ?? null;
-    entry.count += 1;
-    authors.set(name, entry);
-  }
-
-  return {
-    key,
-    repo,
-    branch,
-    label,
-    commits,
-    authors: [...authors.values()].sort((a, b) => b.count - a.count),
-  };
-}
-
-interface ApiPull {
-  merged_at: string | null;
-  user: { login: string; avatar_url: string; html_url: string; type: string } | null;
-}
-
-async function fetchPulls(repo: RepoInfo): Promise<RepoPulls> {
-  const pages: ApiPull[][] = [];
-  const path = `/repos/${repo.fullName}/pulls?state=closed&sort=updated&direction=desc`;
-  const first = await githubJson<ApiPull[]>(`${path}&per_page=${PER_PAGE}&page=1`);
-  pages.push(first.data);
-  const last = lastPageNumber(first.link);
-  for (let page = 2; page <= last; page += 1) {
-    const { data } = await githubJson<ApiPull[]>(`${path}&per_page=${PER_PAGE}&page=${page}`);
-    pages.push(data);
-    if (data.length < PER_PAGE) break;
-  }
-
-  const authors = new Map<string, { login: string; avatar: string | null; htmlUrl: string | null; prs: number }>();
-  let mergedPrs = 0;
-  for (const pull of pages.flat()) {
-    if (!pull.merged_at) continue;
-    mergedPrs += 1;
-    const user = pull.user;
-    // PRs that don't show up on GitHub's contributors graph (squash/rebase
-    // merges, unlinked emails, rewritten history) still count here.
-    if (!user || user.type === "Bot" || /\[bot\]$/.test(user.login)) continue;
-    const entry = authors.get(user.login) ?? {
-      login: user.login,
-      avatar: user.avatar_url,
-      htmlUrl: user.html_url,
-      prs: 0,
-    };
-    entry.prs += 1;
-    authors.set(user.login, entry);
-  }
-
-  return {
-    key: repo.key,
-    repo: repo.fullName,
-    prs: mergedPrs,
-    authors: [...authors.values()].sort((a, b) => b.prs - a.prs),
-  };
-}
-
-interface ApiOrgRepo {
-  name: string;
-  full_name: string;
-  default_branch: string;
-  fork: boolean;
-  archived: boolean;
-}
-
-async function fetchOrgRepos(): Promise<ApiOrgRepo[]> {
-  const { data } = await githubJson<ApiOrgRepo[]>(`/orgs/${ORG}/repos?per_page=100&sort=full_name`);
-  return data.filter((repo) => !repo.fork && !repo.archived);
-}
-
-function branchSources(repos: ApiOrgRepo[]): { key: RepoKey; repo: string; branch: string; label: string }[] {
-  const sources: { key: RepoKey; repo: string; branch: string; label: string }[] = [];
-  for (const repo of repos) {
-    sources.push({
-      key: repoKeyOf(repo.name),
-      repo: repo.full_name,
-      branch: repo.default_branch,
-      label: repo.default_branch,
-    });
-    if (repoKeyOf(repo.name) === "openmouse" && repo.default_branch !== "control-panel") {
-      sources.push({ key: repoKeyOf(repo.name), repo: repo.full_name, branch: "control-panel", label: "control-panel" });
-    }
-  }
-  return sources;
-}
-
-function contributionsOf(person: MergedContributor): number {
-  let prs = 0;
-  for (const count of Object.values(person.prs)) prs += count ?? 0;
-  return person.total + prs;
-}
-
-function mergeContributors(branches: BranchData[], pulls: RepoPulls[]): MergedContributor[] {
-  const merged = new Map<string, MergedContributor>();
-  const upsert = (login: string, avatar: string | null, htmlUrl: string | null): MergedContributor => {
-    const entry = merged.get(login) ?? {
-      login,
-      avatar,
-      htmlUrl,
-      total: 0,
-      repos: {},
-      prs: {},
-    };
-    if (!entry.avatar) entry.avatar = avatar;
-    if (!entry.htmlUrl) entry.htmlUrl = htmlUrl;
-    merged.set(login, entry);
-    return entry;
-  };
-
-  for (const branch of branches) {
-    for (const author of branch.authors) {
-      const entry = upsert(author.login, author.avatar, author.htmlUrl);
-      const previous = entry.repos[branch.key] ?? 0;
-      entry.repos[branch.key] = Math.max(previous, author.count);
-    }
-  }
-
-  for (const repoPulls of pulls) {
-    for (const author of repoPulls.authors) {
-      const entry = upsert(author.login, author.avatar, author.htmlUrl);
-      entry.prs[repoPulls.key] = (entry.prs[repoPulls.key] ?? 0) + author.prs;
-    }
-  }
-
-  for (const entry of merged.values()) {
-    let total = 0;
-    for (const count of Object.values(entry.repos)) total += count ?? 0;
-    entry.total = total;
-  }
-
-  return [...merged.values()].sort((a, b) => contributionsOf(b) - contributionsOf(a));
-}
-
-async function loadData(): Promise<{ data: CachedData }> {
-  const orgRepos = await fetchOrgRepos();
-  const repoList: RepoInfo[] = orgRepos.map((repo) => ({
-    key: repoKeyOf(repo.name),
-    label: repoLabelOf(repo.name),
-    fullName: repo.full_name,
-  }));
-
-  const branches: BranchData[] = [];
-  for (const source of branchSources(orgRepos)) {
-    branches.push(await fetchBranch(source.repo, source.branch, source.key, source.label));
-  }
-
-  const pulls: RepoPulls[] = [];
-  for (const info of repoList) {
-    pulls.push(await fetchPulls(info));
-  }
-
-  const data: CachedData = {
-    fetchedAt: Date.now(),
-    branches,
-    pulls,
-    repoList,
-    merged: mergeContributors(branches, pulls),
-  };
-  writeCache(data);
-  return { data };
-}
+import { DEFAULT_CONTRIBUTORS, loadContributorSnapshot } from "./contributors";
 
 const AMOUNTS = [5, 10, 25, 50, 100];
 
@@ -397,11 +67,13 @@ function LockIcon(): ReactNode {
 }
 
 function formatCurrency(n: number, locale: string): string {
-  return new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US", { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
+  const numberLocale = locale === "pt" ? "pt-BR" : locale === "vi" ? "vi-VN" : "en-US";
+  return new Intl.NumberFormat(numberLocale, { style: "currency", currency: "USD", maximumFractionDigits: 0 }).format(n);
 }
 
 function formatContributions(n: number, locale: string): string {
-  return new Intl.NumberFormat(locale === "pt" ? "pt-BR" : "en-US").format(n);
+  const numberLocale = locale === "pt" ? "pt-BR" : locale === "vi" ? "vi-VN" : "en-US";
+  return new Intl.NumberFormat(numberLocale).format(n);
 }
 
 function formatStars(n: number): string {
@@ -414,47 +86,18 @@ function DonateApp(): ReactNode {
   const [type, setType] = useState<DonationType>("once");
   const [amount, setAmount] = useState<number>(10);
   const [custom, setCustom] = useState("");
-  const [data, setData] = useState<CachedData>(() => readCache() ?? defaultData());
-  const [error, setError] = useState<string | null>(null);
-  const [stale, setStale] = useState(false);
+  const [contributors, setContributors] = useState(DEFAULT_CONTRIBUTORS);
   const [stars, setStars] = useState<number | null>(1473);
-  const loadingRef = useRef(false);
-  const dataRef = useRef<CachedData>(data);
-  dataRef.current = data;
-
-  const refresh = async (): Promise<void> => {
-    if (loadingRef.current) return;
-    loadingRef.current = true;
-    try {
-      const { data: fresh } = await loadData();
-      setData(fresh);
-      setError(null);
-      setStale(false);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : String(err));
-      if (dataRef.current) setStale(true);
-    } finally {
-      loadingRef.current = false;
-    }
-  };
 
   useEffect(() => {
-    if (dataRef.current.fetchedAt === 0) void refresh();
-    const id = window.setInterval(() => {
-      if (document.visibilityState === "visible") void refresh();
-    }, REFRESH_MS);
-    void fetch(`${GITHUB_API}/repos/OpenMouse-Project/openmouse`, {
-      headers: { Accept: "application/vnd.github+json" },
-    })
-      .then((res) => (res.ok ? res.json() : null))
-      .then((repo) => {
-        if (repo && typeof repo.stargazers_count === "number") setStars(repo.stargazers_count);
+    void loadContributorSnapshot()
+      .then((snapshot) => {
+        setContributors(snapshot.contributors);
+        setStars(snapshot.stars);
       })
-      .catch(() => {});
-    return () => {
-      window.clearInterval(id);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+      .catch(() => {
+        // The baked-in snapshot remains visible offline or during a bad deploy.
+      });
   }, []);
 
   const customValue = Number(custom);
@@ -599,13 +242,8 @@ function DonateApp(): ReactNode {
             <span className="don-eyebrow">{t(locale, "don.contribEyebrow")}</span>
             <h2>{t(locale, "don.contribTitle")}</h2>
           </div>
-          {error ? (
-            <p className="don-error" role="alert">
-              {stale ? t(locale, "don.stale") : ""}{tp(locale, "don.apiFail", { msg: error })}
-            </p>
-          ) : null}
           <div className="don-contrib-avatars">
-            {data.merged.map((c) => {
+            {contributors.map((c) => {
               const count = c.total;
               return (
                 <a

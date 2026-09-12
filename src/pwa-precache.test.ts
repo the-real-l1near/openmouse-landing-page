@@ -28,6 +28,10 @@ test("vote and request endpoints bypass the cache", () => {
   assert.equal(bypassed("/api/voting-config"), true);
 });
 
+test("the generated contributor snapshot bypasses the service worker cache", () => {
+  assert.ok(BYPASS.some((pattern) => pattern.test("/contributors.json")));
+});
+
 // The gated control app and admin dashboard live in the separate openmouse
 // repo and are never emitted here — this pattern is kept defensively.
 test("control app and admin paths would bypass the cache if ever proxied here", () => {

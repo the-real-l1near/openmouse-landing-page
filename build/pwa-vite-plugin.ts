@@ -42,6 +42,7 @@ export function pageUrl(file: string): string {
  */
 export const BYPASS = [
   /^\/api\//,
+  /^\/contributors\.json$/,
   /^\/control-app/,
   /^\/protected-assets\//,
   /^\/control(?:\.html)?$/,

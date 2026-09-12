@@ -112,6 +112,9 @@ test("interface locale persists and falls back to the detected language", () => 
   saveInterfacePreferences(storage, { ...DEFAULT_INTERFACE_PREFERENCES, locale: "en" });
   assert.equal(loadInterfacePreferences(storage).locale, "en");
 
+  saveInterfacePreferences(storage, { ...DEFAULT_INTERFACE_PREFERENCES, locale: "vi" });
+  assert.equal(loadInterfacePreferences(storage).locale, "vi");
+
   // Missing or unsupported values follow the browser once (system-dependent,
   // so assert the wiring, not a fixed language).
   const empty = new MemoryStorage();

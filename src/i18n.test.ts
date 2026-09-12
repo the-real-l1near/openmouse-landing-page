@@ -29,3 +29,10 @@ test("i18n maps known connect labels and passes dynamic ones through", () => {
 test("every locale translates every key", async () => {
   assert.deepEqual(await missingTranslations(), []);
 });
+
+test("Vietnamese locale loads standalone-page translations", async () => {
+  await ensureLocale("vi");
+  assert.equal(t("vi", "land.openApp"), "Mở ứng dụng");
+  assert.equal(t("vi", "supp.stSupported"), "Được hỗ trợ");
+  assert.equal(t("vi", "chk.testing"), "Đang kiểm tra {n} thiết bị…");
+});
