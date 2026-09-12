@@ -498,7 +498,17 @@ a:focus-visible, button:focus-visible, input:focus-visible {
   width: 100%;
   border-collapse: collapse;
   font-size: 0.92rem;
+  table-layout: fixed;
 }
+
+.device-table th:nth-child(1),
+.device-table td:nth-child(1) { width: 20%; }
+
+.device-table th:nth-child(2),
+.device-table td:nth-child(2) { width: 25%; }
+
+.device-table th:nth-child(4),
+.device-table td:nth-child(4) { width: 8rem; }
 
 .device-table th {
   text-align: left;
@@ -539,7 +549,11 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 .device-name { font-weight: 600; }
 
-.device-note { color: var(--ink-2); font-size: 0.86rem; }
+.device-note {
+  color: var(--ink-2);
+  font-size: 0.86rem;
+  overflow-wrap: anywhere;
+}
 
 .req-count {
   font-family: "JetBrains Mono", monospace;
@@ -597,5 +611,8 @@ footer {
   .search-wrap { flex: 1 1 100%; order: 3; }
   .result-count { margin-left: 0; }
   .device-table th:nth-child(3), .device-table td:nth-child(3) { display: none; }
+  .device-table th:nth-child(1), .device-table td:nth-child(1) { width: 38%; }
+  .device-table th:nth-child(2), .device-table td:nth-child(2) { width: auto; }
+  .device-table th:nth-child(4), .device-table td:nth-child(4) { width: 4.5rem; }
   footer { justify-content: center; text-align: center; }
 }
