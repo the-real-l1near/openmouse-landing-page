@@ -255,9 +255,6 @@ function branchSources(repos: ApiOrgRepo[]): { key: RepoKey; repo: string; branc
       branch: repo.default_branch,
       label: repo.default_branch,
     });
-    if (repoKeyOf(repo.name) === "openmouse" && repo.default_branch !== "control-panel") {
-      sources.push({ key: repoKeyOf(repo.name), repo: repo.full_name, branch: "control-panel", label: "control-panel" });
-    }
   }
   return sources;
 }
