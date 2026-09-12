@@ -103,6 +103,12 @@ function statusLabel(status: Status): string {
   return t(locale, STATUS_LABEL[status]);
 }
 
+function formatModelName(model: string): string {
+  const suffix = /^(.*?)(\s+\([^()]+\))$/.exec(model);
+  if (!suffix) return model;
+  return `${suffix[1]} <span class="model-qualifier">${suffix[2].trim()}</span>`;
+}
+
 const activeTags = new Set<Status>();
 let activeBrand: string | null = null;
 let searchQuery = "";
@@ -515,7 +521,7 @@ function renderList(): void {
     const rows = items.map(m =>
       `<tr>
         <td><span class="status-badge status-${m.status}">${statusLabel(m.status)}</span></td>
-        <td class="device-name">${m.model}</td>
+        <td class="device-name">${formatModelName(m.model)}</td>
         <td class="device-note">${m.note || "—"}</td>
         <td class="req-count${m.req >= 3 ? " hot" : ""}">${m.req > 0 ? m.req : "—"}</td>
       </tr>`

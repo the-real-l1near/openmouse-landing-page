@@ -549,6 +549,11 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 
 .device-name { font-weight: 600; }
 
+.model-qualifier {
+  display: inline-block;
+  white-space: nowrap;
+}
+
 .device-note {
   color: var(--ink-2);
   font-size: 0.86rem;
