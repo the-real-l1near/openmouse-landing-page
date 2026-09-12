@@ -8,10 +8,9 @@ import { PageLocaleToggle, usePageLocale } from "./app/page-locale";
 import { GITHUB_URL } from "./app/social-links";
 
 const ORG = "OpenMouse-Project";
-const REFRESH_MS = 15 * 60 * 1000;
+const REFRESH_MS = 60 * 60 * 1000;
 const GITHUB_API = "https://api.github.com";
 const PER_PAGE = 100;
-const MAX_PAGES = 40;
 
 /* ── Live contributor data (ported from the old Hall of Fame) ──────────── */
 
@@ -136,47 +135,35 @@ async function githubJson<T>(path: string): Promise<{ data: T; link: string | nu
   return { data, link: res.headers.get("link") };
 }
 
-function lastPageNumber(link: string | null): number {
-  if (!link) return 1;
-  const match = /page=(\d+)[^>]*>;\s*rel="last"/.exec(link);
-  return match ? Math.min(Number(match[1]), MAX_PAGES) : 1;
-}
-
-interface ApiCommit {
-  author: { login: string; avatar_url: string; html_url: string } | null;
-  commit: { author: { name: string } };
+interface ApiContributor {
+  login?: string;
+  name?: string;
+  avatar_url?: string;
+  html_url?: string;
+  contributions: number;
+  type?: string;
 }
 
 async function fetchBranch(repo: string, branch: string, key: RepoKey, label: string): Promise<BranchData> {
-  const pages: ApiCommit[][] = [];
-  const path = `/repos/${repo}/commits?sha=${branch}`;
-  const first = await githubJson<ApiCommit[]>(`${path}&per_page=${PER_PAGE}&page=1`);
-  pages.push(first.data);
-  const last = lastPageNumber(first.link);
-  for (let page = 2; page <= last; page += 1) {
-    const { data } = await githubJson<ApiCommit[]>(`${path}&per_page=${PER_PAGE}&page=${page}`);
-    pages.push(data);
-    if (data.length < PER_PAGE) break;
-  }
-
-  const authors = new Map<string, { login: string; avatar: string | null; htmlUrl: string | null; count: number }>();
+  // GitHub aggregates contributions on the repository's default branch for
+  // us. Fetching the raw commit history used one request per 100 commits and
+  // exhausted the anonymous 60-request/hour quota on every client.
+  const { data } = await githubJson<ApiContributor[]>(
+    `/repos/${repo}/contributors?anon=1&per_page=${PER_PAGE}`,
+  );
+  const authors: BranchData["authors"] = [];
   let commits = 0;
-  for (const commit of pages.flat()) {
-    commits += 1;
-    const login = commit.author?.login;
-    const fallback = commit.author ? null : commit.commit.author.name;
-    const name = login ?? fallback ?? "Unknown";
-    if (name.endsWith("[bot]") || name === "Unknown") continue;
-    const entry = authors.get(name) ?? {
+  for (const contributor of data) {
+    const name = contributor.login ?? contributor.name ?? "Unknown";
+    if (contributor.type === "Bot" || name.endsWith("[bot]") || name === "Unknown") continue;
+    const count = Number.isFinite(contributor.contributions) ? contributor.contributions : 0;
+    commits += count;
+    authors.push({
       login: name,
-      avatar: commit.author?.avatar_url ?? null,
-      htmlUrl: commit.author?.html_url ?? null,
-      count: 0,
-    };
-    if (!entry.avatar) entry.avatar = commit.author?.avatar_url ?? null;
-    if (!entry.htmlUrl) entry.htmlUrl = commit.author?.html_url ?? null;
-    entry.count += 1;
-    authors.set(name, entry);
+      avatar: contributor.avatar_url ?? null,
+      htmlUrl: contributor.html_url ?? null,
+      count,
+    });
   }
 
   return {
@@ -185,7 +172,7 @@ async function fetchBranch(repo: string, branch: string, key: RepoKey, label: st
     branch,
     label,
     commits,
-    authors: [...authors.values()].sort((a, b) => b.count - a.count),
+    authors: authors.sort((a, b) => b.count - a.count),
   };
 }
 
@@ -195,20 +182,14 @@ interface ApiPull {
 }
 
 async function fetchPulls(repo: RepoInfo): Promise<RepoPulls> {
-  const pages: ApiPull[][] = [];
   const path = `/repos/${repo.fullName}/pulls?state=closed&sort=updated&direction=desc`;
-  const first = await githubJson<ApiPull[]>(`${path}&per_page=${PER_PAGE}&page=1`);
-  pages.push(first.data);
-  const last = lastPageNumber(first.link);
-  for (let page = 2; page <= last; page += 1) {
-    const { data } = await githubJson<ApiPull[]>(`${path}&per_page=${PER_PAGE}&page=${page}`);
-    pages.push(data);
-    if (data.length < PER_PAGE) break;
-  }
+  // One bounded page preserves recent squash/rebase contributors without
+  // crawling the complete PR history from every visitor's browser.
+  const { data } = await githubJson<ApiPull[]>(`${path}&per_page=${PER_PAGE}&page=1`);
 
   const authors = new Map<string, { login: string; avatar: string | null; htmlUrl: string | null; prs: number }>();
   let mergedPrs = 0;
-  for (const pull of pages.flat()) {
+  for (const pull of data) {
     if (!pull.merged_at) continue;
     mergedPrs += 1;
     const user = pull.user;
