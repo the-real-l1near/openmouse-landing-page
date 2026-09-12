@@ -3,8 +3,7 @@
 The standalone marketing/support site for OpenMouse, deployed at
 [openmouse.app](https://openmouse.app). This is a separate Cloudflare Pages
 project from the gated control app (control.openmouse.app), which lives in
-the [openmouse](https://github.com/OpenMouse-Project/openmouse) repo's
-`control-panel` branch.
+the [openmouse](https://github.com/OpenMouse-Project/openmouse) repo.
 
 ## Pages
 
@@ -32,6 +31,11 @@ npm test         # unit tests
 
 Copy `.env.example` to `.env` and fill in a Supabase project URL/anon key to
 exercise the request/vote flow locally.
+
+The Donate page reads its contributor list from `public/contributors.json`
+instead of spending each visitor's anonymous GitHub API quota. The
+`update-contributors.yml` workflow refreshes that snapshot daily; run
+`node scripts/update-contributors.mjs` to update it locally.
 
 ## Scope
 

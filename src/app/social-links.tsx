@@ -1,4 +1,5 @@
 import { useEffect, useState, type ReactNode } from "react";
+import { loadContributorSnapshot } from "../contributors";
 
 /* Shared social/community links and icon marks — used by the launch
    countdown gate (control.openmouse.app) and the marketing landing page
@@ -51,11 +52,10 @@ export function useGitHubStars(): number | null {
 
   useEffect(() => {
     let cancelled = false;
-    fetch(`https://api.github.com/repos/${GITHUB_REPO}`)
-      .then((response) => (response.ok ? response.json() : null))
-      .then((data) => {
-        if (!cancelled && data && typeof data.stargazers_count === "number") {
-          setStars(data.stargazers_count);
+    void loadContributorSnapshot()
+      .then((snapshot) => {
+        if (!cancelled) {
+          setStars(snapshot.stars);
         }
       })
       .catch(() => undefined);
