@@ -502,7 +502,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 }
 
 .device-table th:nth-child(1),
-.device-table td:nth-child(1) { width: 20%; }
+.device-table td:nth-child(1) { width: 12.5rem; }
 
 .device-table th:nth-child(2),
 .device-table td:nth-child(2) { width: 25%; }
