@@ -49,6 +49,10 @@
   font-synthesis: none;
 }
 
+html[lang="vi"] {
+  font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 * { box-sizing: border-box; }
 body { margin: 0; min-width: 320px; background: var(--ck-bg); }
 button { font: inherit; cursor: pointer; color: inherit; }

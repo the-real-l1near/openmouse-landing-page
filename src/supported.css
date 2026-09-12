@@ -52,6 +52,11 @@
   --st-pending:   #8b949e;
 }
 
+html[lang="vi"],
+html[lang="vi"] body {
+  font-family: "Be Vietnam Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
 * { box-sizing: border-box; }
 body {
   min-width: 320px;
