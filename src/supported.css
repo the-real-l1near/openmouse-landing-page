@@ -505,7 +505,7 @@ a:focus-visible, button:focus-visible, input:focus-visible {
 .device-table td:nth-child(1) { width: 12.5rem; }
 
 .device-table th:nth-child(2),
-.device-table td:nth-child(2) { width: 25%; }
+.device-table td:nth-child(2) { width: clamp(13rem, 22vw, 20rem); }
 
 .device-table th:nth-child(4),
 .device-table td:nth-child(4) { width: 8rem; }
