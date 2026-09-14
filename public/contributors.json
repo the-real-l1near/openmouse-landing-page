@@ -1,17 +1,17 @@
 {
-  "stars": 1911,
+  "stars": 1920,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 682
+      "total": 693
     },
     {
       "login": "jazzstack",
       "avatar": "https://avatars.githubusercontent.com/u/68454330?v=4",
       "htmlUrl": "https://github.com/jazzstack",
-      "total": 211
+      "total": 214
     },
     {
       "login": "dwei30",
@@ -71,7 +71,13 @@
       "login": "ydw1904",
       "avatar": "https://avatars.githubusercontent.com/u/263818389?v=4",
       "htmlUrl": "https://github.com/ydw1904",
-      "total": 16
+      "total": 17
+    },
+    {
+      "login": "jamezrin",
+      "avatar": "https://avatars.githubusercontent.com/u/5949554?v=4",
+      "htmlUrl": "https://github.com/jamezrin",
+      "total": 10
     },
     {
       "login": "DEERSTUDIO101",
@@ -89,7 +95,13 @@
       "login": "onyxhq-dev",
       "avatar": "https://avatars.githubusercontent.com/u/176524607?v=4",
       "htmlUrl": "https://github.com/onyxhq-dev",
-      "total": 6
+      "total": 7
+    },
+    {
+      "login": "vladidraganov",
+      "avatar": "https://avatars.githubusercontent.com/u/169358251?v=4",
+      "htmlUrl": "https://github.com/vladidraganov",
+      "total": 7
     },
     {
       "login": "qsxcv",
@@ -98,16 +110,16 @@
       "total": 6
     },
     {
-      "login": "vladidraganov",
-      "avatar": "https://avatars.githubusercontent.com/u/169358251?v=4",
-      "htmlUrl": "https://github.com/vladidraganov",
-      "total": 5
-    },
-    {
       "login": "weltern",
       "avatar": "https://avatars.githubusercontent.com/u/37944729?v=4",
       "htmlUrl": "https://github.com/weltern",
       "total": 5
+    },
+    {
+      "login": "hmtheboy154",
+      "avatar": "https://avatars.githubusercontent.com/u/39849246?v=4",
+      "htmlUrl": "https://github.com/hmtheboy154",
+      "total": 4
     },
     {
       "login": "itsnttt",
@@ -116,9 +128,9 @@
       "total": 4
     },
     {
-      "login": "jamezrin",
-      "avatar": "https://avatars.githubusercontent.com/u/5949554?v=4",
-      "htmlUrl": "https://github.com/jamezrin",
+      "login": "hyusband",
+      "avatar": "https://avatars.githubusercontent.com/u/240247852?v=4",
+      "htmlUrl": "https://github.com/hyusband",
       "total": 3
     },
     {
@@ -137,12 +149,6 @@
       "login": "FormunaGit",
       "avatar": "https://avatars.githubusercontent.com/u/108485174?v=4",
       "htmlUrl": "https://github.com/FormunaGit",
-      "total": 2
-    },
-    {
-      "login": "hmtheboy154",
-      "avatar": "https://avatars.githubusercontent.com/u/39849246?v=4",
-      "htmlUrl": "https://github.com/hmtheboy154",
       "total": 2
     },
     {
