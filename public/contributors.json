@@ -1,11 +1,11 @@
 {
-  "stars": 1964,
+  "stars": 1973,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 840
+      "total": 845
     },
     {
       "login": "jazzstack",
@@ -24,6 +24,12 @@
       "avatar": "https://avatars.githubusercontent.com/u/228758946?v=4",
       "htmlUrl": "https://github.com/yanhenrique-dev",
       "total": 42
+    },
+    {
+      "login": "ydw1904",
+      "avatar": "https://avatars.githubusercontent.com/u/263818389?v=4",
+      "htmlUrl": "https://github.com/ydw1904",
+      "total": 26
     },
     {
       "login": "AnasIsmai1",
@@ -68,16 +74,16 @@
       "total": 19
     },
     {
-      "login": "ydw1904",
-      "avatar": "https://avatars.githubusercontent.com/u/263818389?v=4",
-      "htmlUrl": "https://github.com/ydw1904",
-      "total": 19
-    },
-    {
       "login": "logm1lo",
       "avatar": "https://avatars.githubusercontent.com/u/55241926?v=4",
       "htmlUrl": "https://github.com/logm1lo",
       "total": 17
+    },
+    {
+      "login": "onyxhq-dev",
+      "avatar": "https://avatars.githubusercontent.com/u/176524607?v=4",
+      "htmlUrl": "https://github.com/onyxhq-dev",
+      "total": 11
     },
     {
       "login": "DEERSTUDIO101",
@@ -90,12 +96,6 @@
       "avatar": "https://avatars.githubusercontent.com/u/5949554?v=4",
       "htmlUrl": "https://github.com/jamezrin",
       "total": 10
-    },
-    {
-      "login": "onyxhq-dev",
-      "avatar": "https://avatars.githubusercontent.com/u/176524607?v=4",
-      "htmlUrl": "https://github.com/onyxhq-dev",
-      "total": 8
     },
     {
       "login": "kfrancis",
@@ -218,6 +218,12 @@
       "total": 1
     },
     {
+      "login": "Caio-Melote",
+      "avatar": "https://avatars.githubusercontent.com/u/113381237?v=4",
+      "htmlUrl": "https://github.com/Caio-Melote",
+      "total": 1
+    },
+    {
       "login": "defendercf",
       "avatar": "https://avatars.githubusercontent.com/u/60416056?v=4",
       "htmlUrl": "https://github.com/defendercf",
@@ -233,6 +239,12 @@
       "login": "huyvox3",
       "avatar": "https://avatars.githubusercontent.com/u/110270237?v=4",
       "htmlUrl": "https://github.com/huyvox3",
+      "total": 1
+    },
+    {
+      "login": "jchu634",
+      "avatar": "https://avatars.githubusercontent.com/u/87676426?v=4",
+      "htmlUrl": "https://github.com/jchu634",
       "total": 1
     },
     {
