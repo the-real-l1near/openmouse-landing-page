@@ -1,17 +1,23 @@
 {
-  "stars": 1977,
+  "stars": 2063,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 866
+      "total": 904
     },
     {
       "login": "jazzstack",
       "avatar": "https://avatars.githubusercontent.com/u/68454330?v=4",
       "htmlUrl": "https://github.com/jazzstack",
       "total": 281
+    },
+    {
+      "login": "ydw1904",
+      "avatar": "https://avatars.githubusercontent.com/u/263818389?v=4",
+      "htmlUrl": "https://github.com/ydw1904",
+      "total": 49
     },
     {
       "login": "dwei30",
@@ -26,10 +32,10 @@
       "total": 42
     },
     {
-      "login": "ydw1904",
-      "avatar": "https://avatars.githubusercontent.com/u/263818389?v=4",
-      "htmlUrl": "https://github.com/ydw1904",
-      "total": 29
+      "login": "NoxLoveYa",
+      "avatar": "https://avatars.githubusercontent.com/u/83467468?v=4",
+      "htmlUrl": "https://github.com/NoxLoveYa",
+      "total": 32
     },
     {
       "login": "AnasIsmai1",
@@ -50,15 +56,15 @@
       "total": 22
     },
     {
+      "login": "onyxhq-dev",
+      "avatar": "https://avatars.githubusercontent.com/u/176524607?v=4",
+      "htmlUrl": "https://github.com/onyxhq-dev",
+      "total": 22
+    },
+    {
       "login": "AngeloCore",
       "avatar": "https://avatars.githubusercontent.com/u/62988428?v=4",
       "htmlUrl": "https://github.com/AngeloCore",
-      "total": 21
-    },
-    {
-      "login": "NoxLoveYa",
-      "avatar": "https://avatars.githubusercontent.com/u/83467468?v=4",
-      "htmlUrl": "https://github.com/NoxLoveYa",
       "total": 21
     },
     {
@@ -66,12 +72,6 @@
       "avatar": "https://avatars.githubusercontent.com/u/120288342?v=4",
       "htmlUrl": "https://github.com/Pochiiko",
       "total": 21
-    },
-    {
-      "login": "onyxhq-dev",
-      "avatar": "https://avatars.githubusercontent.com/u/176524607?v=4",
-      "htmlUrl": "https://github.com/onyxhq-dev",
-      "total": 20
     },
     {
       "login": "joshjkns",
@@ -98,6 +98,12 @@
       "total": 10
     },
     {
+      "login": "hmtheboy154",
+      "avatar": "https://avatars.githubusercontent.com/u/39849246?v=4",
+      "htmlUrl": "https://github.com/hmtheboy154",
+      "total": 9
+    },
+    {
       "login": "kfrancis",
       "avatar": "https://avatars.githubusercontent.com/u/67574?v=4",
       "htmlUrl": "https://github.com/kfrancis",
@@ -119,12 +125,6 @@
       "login": "EmreO33",
       "avatar": "https://avatars.githubusercontent.com/u/274893088?v=4",
       "htmlUrl": "https://github.com/EmreO33",
-      "total": 5
-    },
-    {
-      "login": "hmtheboy154",
-      "avatar": "https://avatars.githubusercontent.com/u/39849246?v=4",
-      "htmlUrl": "https://github.com/hmtheboy154",
       "total": 5
     },
     {
@@ -150,6 +150,12 @@
       "avatar": "https://avatars.githubusercontent.com/u/62572575?v=4",
       "htmlUrl": "https://github.com/violu",
       "total": 4
+    },
+    {
+      "login": "ElCabrii",
+      "avatar": "https://avatars.githubusercontent.com/u/144121693?v=4",
+      "htmlUrl": "https://github.com/ElCabrii",
+      "total": 3
     },
     {
       "login": "NotLokry",
@@ -239,6 +245,12 @@
       "login": "felixardyansyah",
       "avatar": "https://avatars.githubusercontent.com/u/69527776?v=4",
       "htmlUrl": "https://github.com/felixardyansyah",
+      "total": 1
+    },
+    {
+      "login": "HuyVo",
+      "avatar": null,
+      "htmlUrl": null,
       "total": 1
     },
     {
