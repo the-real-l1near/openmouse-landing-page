@@ -1,11 +1,11 @@
 {
-  "stars": 2063,
+  "stars": 2095,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 904
+      "total": 917
     },
     {
       "login": "jazzstack",
@@ -17,7 +17,7 @@
       "login": "ydw1904",
       "avatar": "https://avatars.githubusercontent.com/u/263818389?v=4",
       "htmlUrl": "https://github.com/ydw1904",
-      "total": 49
+      "total": 56
     },
     {
       "login": "dwei30",
@@ -38,15 +38,15 @@
       "total": 32
     },
     {
-      "login": "AnasIsmai1",
-      "avatar": "https://avatars.githubusercontent.com/u/174011704?v=4",
-      "htmlUrl": "https://github.com/AnasIsmai1",
-      "total": 24
-    },
-    {
       "login": "viix0dev",
       "avatar": "https://avatars.githubusercontent.com/u/151364628?v=4",
       "htmlUrl": "https://github.com/viix0dev",
+      "total": 26
+    },
+    {
+      "login": "AnasIsmai1",
+      "avatar": "https://avatars.githubusercontent.com/u/174011704?v=4",
+      "htmlUrl": "https://github.com/AnasIsmai1",
       "total": 24
     },
     {
@@ -86,6 +86,12 @@
       "total": 17
     },
     {
+      "login": "hmtheboy154",
+      "avatar": "https://avatars.githubusercontent.com/u/39849246?v=4",
+      "htmlUrl": "https://github.com/hmtheboy154",
+      "total": 11
+    },
+    {
       "login": "DEERSTUDIO101",
       "avatar": "https://avatars.githubusercontent.com/u/181780870?v=4",
       "htmlUrl": "https://github.com/DEERSTUDIO101",
@@ -96,12 +102,6 @@
       "avatar": "https://avatars.githubusercontent.com/u/5949554?v=4",
       "htmlUrl": "https://github.com/jamezrin",
       "total": 10
-    },
-    {
-      "login": "hmtheboy154",
-      "avatar": "https://avatars.githubusercontent.com/u/39849246?v=4",
-      "htmlUrl": "https://github.com/hmtheboy154",
-      "total": 9
     },
     {
       "login": "kfrancis",
@@ -128,15 +128,21 @@
       "total": 5
     },
     {
+      "login": "hyusband",
+      "avatar": "https://avatars.githubusercontent.com/u/240247852?v=4",
+      "htmlUrl": "https://github.com/hyusband",
+      "total": 5
+    },
+    {
       "login": "weltern",
       "avatar": "https://avatars.githubusercontent.com/u/37944729?v=4",
       "htmlUrl": "https://github.com/weltern",
       "total": 5
     },
     {
-      "login": "hyusband",
-      "avatar": "https://avatars.githubusercontent.com/u/240247852?v=4",
-      "htmlUrl": "https://github.com/hyusband",
+      "login": "HuyVo",
+      "avatar": null,
+      "htmlUrl": null,
       "total": 4
     },
     {
@@ -245,12 +251,6 @@
       "login": "felixardyansyah",
       "avatar": "https://avatars.githubusercontent.com/u/69527776?v=4",
       "htmlUrl": "https://github.com/felixardyansyah",
-      "total": 1
-    },
-    {
-      "login": "HuyVo",
-      "avatar": null,
-      "htmlUrl": null,
       "total": 1
     },
     {
