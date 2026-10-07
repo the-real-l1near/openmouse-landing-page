@@ -1,11 +1,11 @@
 {
-  "stars": 2281,
+  "stars": 2305,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1011
+      "total": 1015
     },
     {
       "login": "jazzstack",
@@ -152,6 +152,12 @@
       "total": 5
     },
     {
+      "login": "claude",
+      "avatar": "https://avatars.githubusercontent.com/u/81847?v=4",
+      "htmlUrl": "https://github.com/claude",
+      "total": 4
+    },
+    {
       "login": "HuyVo",
       "avatar": null,
       "htmlUrl": null,
@@ -161,6 +167,12 @@
       "login": "itsnttt",
       "avatar": "https://avatars.githubusercontent.com/u/55214976?v=4",
       "htmlUrl": "https://github.com/itsnttt",
+      "total": 4
+    },
+    {
+      "login": "sekiranunn",
+      "avatar": "https://avatars.githubusercontent.com/u/169538186?v=4",
+      "htmlUrl": "https://github.com/sekiranunn",
       "total": 4
     },
     {
@@ -188,12 +200,6 @@
       "total": 3
     },
     {
-      "login": "sekiranunn",
-      "avatar": "https://avatars.githubusercontent.com/u/169538186?v=4",
-      "htmlUrl": "https://github.com/sekiranunn",
-      "total": 3
-    },
-    {
       "login": "artembaechka",
       "avatar": "https://avatars.githubusercontent.com/u/31122393?v=4",
       "htmlUrl": "https://github.com/artembaechka",
@@ -209,12 +215,6 @@
       "login": "Caio-Melote",
       "avatar": "https://avatars.githubusercontent.com/u/113381237?v=4",
       "htmlUrl": "https://github.com/Caio-Melote",
-      "total": 2
-    },
-    {
-      "login": "claude",
-      "avatar": "https://avatars.githubusercontent.com/u/81847?v=4",
-      "htmlUrl": "https://github.com/claude",
       "total": 2
     },
     {
