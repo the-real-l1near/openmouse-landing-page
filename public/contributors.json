@@ -1,11 +1,11 @@
 {
-  "stars": 2447,
+  "stars": 2463,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1157
+      "total": 1172
     },
     {
       "login": "jazzstack",
@@ -209,6 +209,12 @@
       "login": "NotLokry",
       "avatar": "https://avatars.githubusercontent.com/u/73301704?v=4",
       "htmlUrl": "https://github.com/NotLokry",
+      "total": 3
+    },
+    {
+      "login": "shamsghani",
+      "avatar": null,
+      "htmlUrl": null,
       "total": 3
     },
     {
