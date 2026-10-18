@@ -1,11 +1,11 @@
 {
-  "stars": 2523,
+  "stars": 2531,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1228
+      "total": 1241
     },
     {
       "login": "jazzstack",
@@ -17,7 +17,7 @@
       "login": "onyxhq-dev",
       "avatar": "https://avatars.githubusercontent.com/u/176524607?v=4",
       "htmlUrl": "https://github.com/onyxhq-dev",
-      "total": 90
+      "total": 91
     },
     {
       "login": "ydw1904",
@@ -50,16 +50,16 @@
       "total": 26
     },
     {
+      "login": "7eedle",
+      "avatar": "https://avatars.githubusercontent.com/u/232406712?v=4",
+      "htmlUrl": "https://github.com/7eedle",
+      "total": 25
+    },
+    {
       "login": "AnasIsmai1",
       "avatar": "https://avatars.githubusercontent.com/u/174011704?v=4",
       "htmlUrl": "https://github.com/AnasIsmai1",
       "total": 24
-    },
-    {
-      "login": "7eedle",
-      "avatar": "https://avatars.githubusercontent.com/u/232406712?v=4",
-      "htmlUrl": "https://github.com/7eedle",
-      "total": 22
     },
     {
       "login": "AngeloCore",
@@ -197,6 +197,12 @@
       "login": "awangelo",
       "avatar": "https://avatars.githubusercontent.com/u/99550408?v=4",
       "htmlUrl": "https://github.com/awangelo",
+      "total": 3
+    },
+    {
+      "login": "codex",
+      "avatar": "https://avatars.githubusercontent.com/u/267193182?v=4",
+      "htmlUrl": "https://github.com/codex",
       "total": 3
     },
     {
