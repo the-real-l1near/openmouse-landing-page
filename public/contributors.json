@@ -1,17 +1,17 @@
 {
-  "stars": 2559,
+  "stars": 2573,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1255
+      "total": 1170
     },
     {
       "login": "jazzstack",
       "avatar": "https://avatars.githubusercontent.com/u/68454330?v=4",
       "htmlUrl": "https://github.com/jazzstack",
-      "total": 281
+      "total": 248
     },
     {
       "login": "onyxhq-dev",
@@ -23,7 +23,7 @@
       "login": "ydw1904",
       "avatar": "https://avatars.githubusercontent.com/u/263818389?v=4",
       "htmlUrl": "https://github.com/ydw1904",
-      "total": 88
+      "total": 86
     },
     {
       "login": "dwei30",
@@ -47,7 +47,7 @@
       "login": "7eedle",
       "avatar": "https://avatars.githubusercontent.com/u/232406712?v=4",
       "htmlUrl": "https://github.com/7eedle",
-      "total": 26
+      "total": 28
     },
     {
       "login": "viix0dev",
@@ -107,7 +107,7 @@
       "login": "hmtheboy154",
       "avatar": "https://avatars.githubusercontent.com/u/39849246?v=4",
       "htmlUrl": "https://github.com/hmtheboy154",
-      "total": 11
+      "total": 10
     },
     {
       "login": "jamezrin",
@@ -146,18 +146,6 @@
       "total": 6
     },
     {
-      "login": "EmreO33",
-      "avatar": "https://avatars.githubusercontent.com/u/274893088?v=4",
-      "htmlUrl": "https://github.com/EmreO33",
-      "total": 5
-    },
-    {
-      "login": "hyusband",
-      "avatar": "https://avatars.githubusercontent.com/u/240247852?v=4",
-      "htmlUrl": "https://github.com/hyusband",
-      "total": 5
-    },
-    {
       "login": "radozea",
       "avatar": "https://avatars.githubusercontent.com/u/92687162?v=4",
       "htmlUrl": "https://github.com/radozea",
@@ -179,6 +167,12 @@
       "login": "HuyVo",
       "avatar": null,
       "htmlUrl": null,
+      "total": 4
+    },
+    {
+      "login": "hyusband",
+      "avatar": "https://avatars.githubusercontent.com/u/240247852?v=4",
+      "htmlUrl": "https://github.com/hyusband",
       "total": 4
     },
     {
@@ -209,6 +203,12 @@
       "login": "ElCabrii",
       "avatar": "https://avatars.githubusercontent.com/u/144121693?v=4",
       "htmlUrl": "https://github.com/ElCabrii",
+      "total": 3
+    },
+    {
+      "login": "EmreO33",
+      "avatar": "https://avatars.githubusercontent.com/u/274893088?v=4",
+      "htmlUrl": "https://github.com/EmreO33",
       "total": 3
     },
     {
@@ -413,12 +413,6 @@
       "login": "Phoenix0704",
       "avatar": "https://avatars.githubusercontent.com/u/91696047?v=4",
       "htmlUrl": "https://github.com/Phoenix0704",
-      "total": 1
-    },
-    {
-      "login": "phunb3101",
-      "avatar": "https://avatars.githubusercontent.com/u/22000216?v=4",
-      "htmlUrl": "https://github.com/phunb3101",
       "total": 1
     },
     {
