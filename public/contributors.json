@@ -1,11 +1,11 @@
 {
-  "stars": 2583,
+  "stars": 2592,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1183
+      "total": 1198
     },
     {
       "login": "jazzstack",
@@ -152,10 +152,22 @@
       "total": 5
     },
     {
+      "login": "torisetxd",
+      "avatar": "https://avatars.githubusercontent.com/u/83957345?v=4",
+      "htmlUrl": "https://github.com/torisetxd",
+      "total": 5
+    },
+    {
       "login": "weltern",
       "avatar": "https://avatars.githubusercontent.com/u/37944729?v=4",
       "htmlUrl": "https://github.com/weltern",
       "total": 5
+    },
+    {
+      "login": "awangelo",
+      "avatar": "https://avatars.githubusercontent.com/u/99550408?v=4",
+      "htmlUrl": "https://github.com/awangelo",
+      "total": 4
     },
     {
       "login": "dot-mike",
@@ -188,12 +200,6 @@
       "total": 4
     },
     {
-      "login": "awangelo",
-      "avatar": "https://avatars.githubusercontent.com/u/99550408?v=4",
-      "htmlUrl": "https://github.com/awangelo",
-      "total": 3
-    },
-    {
       "login": "codex",
       "avatar": "https://avatars.githubusercontent.com/u/267193182?v=4",
       "htmlUrl": "https://github.com/codex",
@@ -221,12 +227,6 @@
       "login": "shamsghani",
       "avatar": null,
       "htmlUrl": null,
-      "total": 3
-    },
-    {
-      "login": "torisetxd",
-      "avatar": "https://avatars.githubusercontent.com/u/83957345?v=4",
-      "htmlUrl": "https://github.com/torisetxd",
       "total": 3
     },
     {
@@ -437,6 +437,12 @@
       "login": "the-real-l1near",
       "avatar": "https://avatars.githubusercontent.com/u/311445918?v=4",
       "htmlUrl": "https://github.com/the-real-l1near",
+      "total": 1
+    },
+    {
+      "login": "thebryce15",
+      "avatar": "https://avatars.githubusercontent.com/u/183674351?v=4",
+      "htmlUrl": "https://github.com/thebryce15",
       "total": 1
     },
     {
