@@ -1,5 +1,5 @@
 {
-  "stars": 2600,
+  "stars": 2627,
   "contributors": [
     {
       "login": "snekxs",
@@ -80,16 +80,16 @@
       "total": 19
     },
     {
+      "login": "claude",
+      "avatar": "https://avatars.githubusercontent.com/u/81847?v=4",
+      "htmlUrl": "https://github.com/claude",
+      "total": 17
+    },
+    {
       "login": "logm1lo",
       "avatar": "https://avatars.githubusercontent.com/u/55241926?v=4",
       "htmlUrl": "https://github.com/logm1lo",
       "total": 17
-    },
-    {
-      "login": "claude",
-      "avatar": "https://avatars.githubusercontent.com/u/81847?v=4",
-      "htmlUrl": "https://github.com/claude",
-      "total": 16
     },
     {
       "login": "DEERSTUDIO101",
