@@ -1,23 +1,23 @@
 {
-  "stars": 2627,
+  "stars": 2640,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1198
+      "total": 1204
     },
     {
       "login": "jazzstack",
       "avatar": "https://avatars.githubusercontent.com/u/68454330?v=4",
       "htmlUrl": "https://github.com/jazzstack",
-      "total": 248
+      "total": 259
     },
     {
       "login": "onyxhq-dev",
       "avatar": "https://avatars.githubusercontent.com/u/176524607?v=4",
       "htmlUrl": "https://github.com/onyxhq-dev",
-      "total": 93
+      "total": 96
     },
     {
       "login": "ydw1904",
@@ -38,16 +38,16 @@
       "total": 42
     },
     {
+      "login": "7eedle",
+      "avatar": "https://avatars.githubusercontent.com/u/232406712?v=4",
+      "htmlUrl": "https://github.com/7eedle",
+      "total": 35
+    },
+    {
       "login": "NoxLoveYa",
       "avatar": "https://avatars.githubusercontent.com/u/83467468?v=4",
       "htmlUrl": "https://github.com/NoxLoveYa",
       "total": 32
-    },
-    {
-      "login": "7eedle",
-      "avatar": "https://avatars.githubusercontent.com/u/232406712?v=4",
-      "htmlUrl": "https://github.com/7eedle",
-      "total": 31
     },
     {
       "login": "viix0dev",
@@ -143,6 +143,12 @@
       "login": "qsxcv",
       "avatar": "https://avatars.githubusercontent.com/u/19379376?v=4",
       "htmlUrl": "https://github.com/qsxcv",
+      "total": 6
+    },
+    {
+      "login": "theAIOdev",
+      "avatar": "https://avatars.githubusercontent.com/u/59576498?v=4",
+      "htmlUrl": "https://github.com/theAIOdev",
       "total": 6
     },
     {
