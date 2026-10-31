@@ -1,11 +1,11 @@
 {
-  "stars": 2716,
+  "stars": 2754,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1293
+      "total": 1314
     },
     {
       "login": "jazzstack",
@@ -17,7 +17,7 @@
       "login": "onyxhq-dev",
       "avatar": "https://avatars.githubusercontent.com/u/176524607?v=4",
       "htmlUrl": "https://github.com/onyxhq-dev",
-      "total": 98
+      "total": 100
     },
     {
       "login": "ydw1904",
@@ -309,6 +309,12 @@
     },
     {
       "login": "opencode",
+      "avatar": null,
+      "htmlUrl": null,
+      "total": 2
+    },
+    {
+      "login": "OpenMouse Bot",
       "avatar": null,
       "htmlUrl": null,
       "total": 2
