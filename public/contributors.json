@@ -1,11 +1,11 @@
 {
-  "stars": 2851,
+  "stars": 2869,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1385
+      "total": 1401
     },
     {
       "login": "jazzstack",
@@ -98,6 +98,12 @@
       "total": 15
     },
     {
+      "login": "theAIOdev",
+      "avatar": "https://avatars.githubusercontent.com/u/59576498?v=4",
+      "htmlUrl": "https://github.com/theAIOdev",
+      "total": 15
+    },
+    {
       "login": "sekiranunn",
       "avatar": "https://avatars.githubusercontent.com/u/169538186?v=4",
       "htmlUrl": "https://github.com/sekiranunn",
@@ -128,9 +134,21 @@
       "total": 10
     },
     {
+      "login": "finnwasabi",
+      "avatar": "https://avatars.githubusercontent.com/u/25961652?v=4",
+      "htmlUrl": "https://github.com/finnwasabi",
+      "total": 7
+    },
+    {
       "login": "kfrancis",
       "avatar": "https://avatars.githubusercontent.com/u/67574?v=4",
       "htmlUrl": "https://github.com/kfrancis",
+      "total": 7
+    },
+    {
+      "login": "Kissshot-2003",
+      "avatar": "https://avatars.githubusercontent.com/u/311225363?v=4",
+      "htmlUrl": "https://github.com/Kissshot-2003",
       "total": 7
     },
     {
@@ -158,22 +176,16 @@
       "total": 6
     },
     {
-      "login": "finnwasabi",
-      "avatar": "https://avatars.githubusercontent.com/u/25961652?v=4",
-      "htmlUrl": "https://github.com/finnwasabi",
-      "total": 6
-    },
-    {
       "login": "qsxcv",
       "avatar": "https://avatars.githubusercontent.com/u/19379376?v=4",
       "htmlUrl": "https://github.com/qsxcv",
       "total": 6
     },
     {
-      "login": "theAIOdev",
-      "avatar": "https://avatars.githubusercontent.com/u/59576498?v=4",
-      "htmlUrl": "https://github.com/theAIOdev",
-      "total": 6
+      "login": "kagaminehaku",
+      "avatar": "https://avatars.githubusercontent.com/u/85939523?v=4",
+      "htmlUrl": "https://github.com/kagaminehaku",
+      "total": 5
     },
     {
       "login": "kunalagra",
@@ -191,6 +203,12 @@
       "login": "rkzofficial",
       "avatar": "https://avatars.githubusercontent.com/u/40551183?v=4",
       "htmlUrl": "https://github.com/rkzofficial",
+      "total": 5
+    },
+    {
+      "login": "saulvalenzuela23",
+      "avatar": "https://avatars.githubusercontent.com/u/59126248?v=4",
+      "htmlUrl": "https://github.com/saulvalenzuela23",
       "total": 5
     },
     {
@@ -260,6 +278,12 @@
       "total": 3
     },
     {
+      "login": "happyme531",
+      "avatar": "https://avatars.githubusercontent.com/u/20812356?v=4",
+      "htmlUrl": "https://github.com/happyme531",
+      "total": 3
+    },
+    {
       "login": "jchu634",
       "avatar": "https://avatars.githubusercontent.com/u/87676426?v=4",
       "htmlUrl": "https://github.com/jchu634",
@@ -299,6 +323,12 @@
       "login": "Caio-Melote",
       "avatar": "https://avatars.githubusercontent.com/u/113381237?v=4",
       "htmlUrl": "https://github.com/Caio-Melote",
+      "total": 2
+    },
+    {
+      "login": "devyat009",
+      "avatar": "https://avatars.githubusercontent.com/u/91706455?v=4",
+      "htmlUrl": "https://github.com/devyat009",
       "total": 2
     },
     {
@@ -368,12 +398,6 @@
       "total": 2
     },
     {
-      "login": "saulvalenzuela23",
-      "avatar": "https://avatars.githubusercontent.com/u/59126248?v=4",
-      "htmlUrl": "https://github.com/saulvalenzuela23",
-      "total": 2
-    },
-    {
       "login": "starch",
       "avatar": "https://avatars.githubusercontent.com/u/4334932?v=4",
       "htmlUrl": "https://github.com/starch",
@@ -396,6 +420,12 @@
       "avatar": "https://avatars.githubusercontent.com/u/117452352?v=4",
       "htmlUrl": "https://github.com/ziewenn",
       "total": 2
+    },
+    {
+      "login": "AniketSpecter",
+      "avatar": "https://avatars.githubusercontent.com/u/225938308?v=4",
+      "htmlUrl": "https://github.com/AniketSpecter",
+      "total": 1
     },
     {
       "login": "AntiParty",
