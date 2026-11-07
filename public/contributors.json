@@ -1,11 +1,11 @@
 {
-  "stars": 2869,
+  "stars": 2884,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1401
+      "total": 1408
     },
     {
       "login": "jazzstack",
@@ -92,15 +92,15 @@
       "total": 17
     },
     {
-      "login": "DEERSTUDIO101",
-      "avatar": "https://avatars.githubusercontent.com/u/181780870?v=4",
-      "htmlUrl": "https://github.com/DEERSTUDIO101",
-      "total": 15
-    },
-    {
       "login": "theAIOdev",
       "avatar": "https://avatars.githubusercontent.com/u/59576498?v=4",
       "htmlUrl": "https://github.com/theAIOdev",
+      "total": 17
+    },
+    {
+      "login": "DEERSTUDIO101",
+      "avatar": "https://avatars.githubusercontent.com/u/181780870?v=4",
+      "htmlUrl": "https://github.com/DEERSTUDIO101",
       "total": 15
     },
     {
@@ -108,6 +108,12 @@
       "avatar": "https://avatars.githubusercontent.com/u/169538186?v=4",
       "htmlUrl": "https://github.com/sekiranunn",
       "total": 14
+    },
+    {
+      "login": "vladidraganov",
+      "avatar": "https://avatars.githubusercontent.com/u/169358251?v=4",
+      "htmlUrl": "https://github.com/vladidraganov",
+      "total": 12
     },
     {
       "login": "NotLokry",
@@ -140,6 +146,12 @@
       "total": 7
     },
     {
+      "login": "kagaminehaku",
+      "avatar": "https://avatars.githubusercontent.com/u/85939523?v=4",
+      "htmlUrl": "https://github.com/kagaminehaku",
+      "total": 7
+    },
+    {
       "login": "kfrancis",
       "avatar": "https://avatars.githubusercontent.com/u/67574?v=4",
       "htmlUrl": "https://github.com/kfrancis",
@@ -155,12 +167,6 @@
       "login": "user_1781515504933",
       "avatar": null,
       "htmlUrl": null,
-      "total": 7
-    },
-    {
-      "login": "vladidraganov",
-      "avatar": "https://avatars.githubusercontent.com/u/169358251?v=4",
-      "htmlUrl": "https://github.com/vladidraganov",
       "total": 7
     },
     {
@@ -180,12 +186,6 @@
       "avatar": "https://avatars.githubusercontent.com/u/19379376?v=4",
       "htmlUrl": "https://github.com/qsxcv",
       "total": 6
-    },
-    {
-      "login": "kagaminehaku",
-      "avatar": "https://avatars.githubusercontent.com/u/85939523?v=4",
-      "htmlUrl": "https://github.com/kagaminehaku",
-      "total": 5
     },
     {
       "login": "kunalagra",
@@ -290,6 +290,12 @@
       "total": 3
     },
     {
+      "login": "OpenMouse Bot",
+      "avatar": null,
+      "htmlUrl": null,
+      "total": 3
+    },
+    {
       "login": "shamsghani",
       "avatar": null,
       "htmlUrl": null,
@@ -381,12 +387,6 @@
     },
     {
       "login": "opencode",
-      "avatar": null,
-      "htmlUrl": null,
-      "total": 2
-    },
-    {
-      "login": "OpenMouse Bot",
       "avatar": null,
       "htmlUrl": null,
       "total": 2
