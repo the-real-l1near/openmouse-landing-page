@@ -1,11 +1,11 @@
 {
-  "stars": 2897,
+  "stars": 2906,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1414
+      "total": 1433
     },
     {
       "login": "jazzstack",
@@ -62,6 +62,12 @@
       "total": 24
     },
     {
+      "login": "claude",
+      "avatar": "https://avatars.githubusercontent.com/u/81847?v=4",
+      "htmlUrl": "https://github.com/claude",
+      "total": 22
+    },
+    {
       "login": "AngeloCore",
       "avatar": "https://avatars.githubusercontent.com/u/62988428?v=4",
       "htmlUrl": "https://github.com/AngeloCore",
@@ -78,12 +84,6 @@
       "avatar": "https://avatars.githubusercontent.com/u/65767516?v=4",
       "htmlUrl": "https://github.com/joshjkns",
       "total": 19
-    },
-    {
-      "login": "claude",
-      "avatar": "https://avatars.githubusercontent.com/u/81847?v=4",
-      "htmlUrl": "https://github.com/claude",
-      "total": 18
     },
     {
       "login": "theAIOdev",
