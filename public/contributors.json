@@ -1,11 +1,11 @@
 {
-  "stars": 2929,
+  "stars": 2934,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1443
+      "total": 1446
     },
     {
       "login": "jazzstack",
@@ -140,15 +140,15 @@
       "total": 10
     },
     {
-      "login": "finnwasabi",
-      "avatar": "https://avatars.githubusercontent.com/u/25961652?v=4",
-      "htmlUrl": "https://github.com/finnwasabi",
-      "total": 7
-    },
-    {
       "login": "kagaminehaku",
       "avatar": "https://avatars.githubusercontent.com/u/85939523?v=4",
       "htmlUrl": "https://github.com/kagaminehaku",
+      "total": 8
+    },
+    {
+      "login": "finnwasabi",
+      "avatar": "https://avatars.githubusercontent.com/u/25961652?v=4",
+      "htmlUrl": "https://github.com/finnwasabi",
       "total": 7
     },
     {
@@ -230,6 +230,12 @@
       "total": 4
     },
     {
+      "login": "HighestFidelity",
+      "avatar": "https://avatars.githubusercontent.com/u/157998857?v=4",
+      "htmlUrl": "https://github.com/HighestFidelity",
+      "total": 4
+    },
+    {
       "login": "HuyVo",
       "avatar": null,
       "htmlUrl": null,
@@ -287,6 +293,12 @@
       "login": "jchu634",
       "avatar": "https://avatars.githubusercontent.com/u/87676426?v=4",
       "htmlUrl": "https://github.com/jchu634",
+      "total": 3
+    },
+    {
+      "login": "lmaoskript",
+      "avatar": "https://avatars.githubusercontent.com/u/100234480?v=4",
+      "htmlUrl": "https://github.com/lmaoskript",
       "total": 3
     },
     {
@@ -353,6 +365,12 @@
       "login": "hypn",
       "avatar": "https://avatars.githubusercontent.com/u/146244?v=4",
       "htmlUrl": "https://github.com/hypn",
+      "total": 2
+    },
+    {
+      "login": "klNuno",
+      "avatar": "https://avatars.githubusercontent.com/u/96637888?v=4",
+      "htmlUrl": "https://github.com/klNuno",
       "total": 2
     },
     {
@@ -467,12 +485,6 @@
       "login": "jus-kim",
       "avatar": "https://avatars.githubusercontent.com/u/120619077?v=4",
       "htmlUrl": "https://github.com/jus-kim",
-      "total": 1
-    },
-    {
-      "login": "klNuno",
-      "avatar": "https://avatars.githubusercontent.com/u/96637888?v=4",
-      "htmlUrl": "https://github.com/klNuno",
       "total": 1
     },
     {
