@@ -1,11 +1,11 @@
 {
-  "stars": 2934,
+  "stars": 2945,
   "contributors": [
     {
       "login": "snekxs",
       "avatar": "https://avatars.githubusercontent.com/u/26660858?v=4",
       "htmlUrl": "https://github.com/snekxs",
-      "total": 1446
+      "total": 1447
     },
     {
       "login": "jazzstack",
@@ -140,6 +140,12 @@
       "total": 10
     },
     {
+      "login": "HighestFidelity",
+      "avatar": "https://avatars.githubusercontent.com/u/157998857?v=4",
+      "htmlUrl": "https://github.com/HighestFidelity",
+      "total": 8
+    },
+    {
       "login": "kagaminehaku",
       "avatar": "https://avatars.githubusercontent.com/u/85939523?v=4",
       "htmlUrl": "https://github.com/kagaminehaku",
@@ -227,12 +233,6 @@
       "login": "dot-mike",
       "avatar": "https://avatars.githubusercontent.com/u/586280?v=4",
       "htmlUrl": "https://github.com/dot-mike",
-      "total": 4
-    },
-    {
-      "login": "HighestFidelity",
-      "avatar": "https://avatars.githubusercontent.com/u/157998857?v=4",
-      "htmlUrl": "https://github.com/HighestFidelity",
       "total": 4
     },
     {
